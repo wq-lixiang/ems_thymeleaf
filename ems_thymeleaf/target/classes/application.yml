@@ -1,0 +1,18 @@
+server:
+  port: 8989
+  servlet:
+    context-path: /ems
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ems_thymeleaf?characterEncoding=utf-8
+    username: root
+    password: 200088lx
+  resources:
+    static-locations: classpath:/static , classpath:/templates
+mybatis:
+  type-aliases-package: world.lixiang.entity
+  mapper-locations: classpath:/mapper/*
+
+

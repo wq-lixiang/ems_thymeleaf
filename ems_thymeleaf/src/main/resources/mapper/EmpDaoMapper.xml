@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="world.lixiang.dao.EmpDao">
+    <update id="updateEmp" parameterType="Emp">
+        update  t_emp set name = #{name} , salary = #{salary} , age = #{age} , bir = #{bir} where id = #{id}
+    </update>
+    <delete id="deleteEmp" parameterType="String">
+        delete from t_emp where id = #{id}
+    </delete>
+
+    <select id="findAll" resultType="Emp">
+        select * from t_emp
+    </select>
+    <select id="save" parameterType="Emp">
+        insert into t_emp values (#{id},#{name},#{salary},#{age},#{bir})
+    </select>
+    <select id="findById" resultType="world.lixiang.entity.Emp" parameterType="String">
+        select id , name , salary , age , bir from t_emp where id = #{id}
+    </select>
+
+
+</mapper>
